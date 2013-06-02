@@ -4,6 +4,5 @@ Just add these lines in your ~/.bashrc file
 *********************************
 
 if [ -d "$HOME/_" ] ; then
-echo "oui"
     PATH="$HOME/_/bin:$PATH"
 fi

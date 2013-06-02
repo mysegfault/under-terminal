@@ -10,10 +10,7 @@ fi
 test $INSTALL_DEV_ANDROID && source $HOME/_/bin/_/dev/android
 test $INSTALL_DEV_WEB && source $HOME/_/bin/_/dev/web
 
-exit
+#sudo grep -r hugin /etc/apt/ > /dev/null || sudo add-apt-repository ppa:hugin/hugin-builds
+#sudo apt-key list | grep "Google, Inc. Linux Package Signing Key" > /dev/null || (wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -)
 
-sudo grep -r hugin /etc/apt/ > /dev/null || sudo add-apt-repository ppa:hugin/hugin-builds
-sudo apt-key list | grep "Google, Inc. Linux Package Signing Key" > /dev/null || (wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -)
-
-sudo apt-get install emacs24-nox keepassx gscan2pdf hugin meld xcfa vlc virtualbox wine1.4 nfs-common apache2 php5 curl pwgen php5-curl filezilla cdparanoia libavcodec-extra-53 pavucontrol rar skype subversion cdda2wav icedax cd-discid sparkleshare traceroute aircrack-ng whois gir1.2-gtop-2.0 npm
-
+#sudo apt-get install emacs24-nox keepassx gscan2pdf hugin meld xcfa vlc virtualbox wine1.4 nfs-common apache2 php5 curl pwgen php5-curl filezilla cdparanoia libavcodec-extra-53 pavucontrol rar skype subversion cdda2wav icedax cd-discid sparkleshare traceroute aircrack-ng whois gir1.2-gtop-2.0 npm
