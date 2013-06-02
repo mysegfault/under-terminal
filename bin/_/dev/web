@@ -1,0 +1,17 @@
+#/bin/bash
+
+if [ ! -d "$HOME/netbeans-7.3" ]
+then
+	echo "Installing Netbeans 7.3..."
+	SOURCE=http://dlc.sun.com.edgesuite.net/netbeans/7.3/final/bundles/netbeans-7.3-php-linux.sh
+	INSTALLER=`basename $SOURCE`
+	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
+	then
+		cd $_DOWNLOAD_PATH
+		wget $SOURCE
+	fi
+	sh $_DOWNLOAD_PATH/$INSTALLER
+else
+	echo "ADT Bundle package already installed."
+fi
+

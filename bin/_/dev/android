@@ -1,0 +1,17 @@
+#/bin/bash
+
+if [ ! -d "$HOME/adt-bundle-linux-x86_64" ]
+then
+	echo "Installing ADT Bundle package..."
+	SOURCE=http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20130522.zip
+	INSTALLER=adt-bundle-linux-x86_64-20130522.zip
+	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
+	then
+		cd $_DOWNLOAD_PATH
+		wget $SOURCE
+	fi
+	echo "..." unzip adt-bundle-linux-x86_64.zip
+else
+	echo "ADT Bundle package already installed."
+fi
+

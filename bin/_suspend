@@ -1,0 +1,13 @@
+#!/bin/sh
+
+DELAY='0m'
+
+if [ $# = 1 ]
+then
+	DELAY=$1
+fi
+
+sudo echo "Suspending into $DELAY"
+sudo su -c "sleep $DELAY && pm-suspend-hybrid"
+
+#dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend
