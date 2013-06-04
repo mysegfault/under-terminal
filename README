@@ -1,8 +1,12 @@
 
-*********************************
-Just add these lines in your ~/.bashrc file
-*********************************
+***********************************************
+* Just add these lines in your ~/.bashrc file *
+***********************************************
 
 if [ -d "$HOME/_" ] ; then
     PATH="$HOME/_/bin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
 fi

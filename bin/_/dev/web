@@ -12,6 +12,20 @@ then
 	fi
 	sh $_DOWNLOAD_PATH/$INSTALLER
 else
-	echo "ADT Bundle package already installed."
+	echo "Netbeans 7.3 package already installed."
 fi
 
+if [ ! -f "/usr/bin/google-chrome" ]
+then
+	echo "Installing Google Chrome beta..."
+	SOURCE=https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb
+	INSTALLER=`basename $SOURCE`
+	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
+	then
+		cd $_DOWNLOAD_PATH
+		wget $SOURCE
+	fi
+	sudo dpkg -i $_DOWNLOAD_PATH/$INSTALLER
+else
+	echo "Google Chrome package already installed."
+fi

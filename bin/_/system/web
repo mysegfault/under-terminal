@@ -1,0 +1,9 @@
+#/bin/bash
+
+if [ ! -d "/var/www" ]
+then
+	sudo mkdir -p /var/www
+else
+	echo "System web already configured."
+fi
+

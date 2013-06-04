@@ -1,0 +1,34 @@
+#/bin/bash
+
+if [ ! -d "$_CONFIG_FILES_PATH" ]
+then
+	mkdir -p $_CONFIG_FILES_PATH
+fi
+
+if [ ! -f "$_CONFIG_FILES_PATH/.bashrc" ]
+then
+	touch $HOME/.bashrc
+	mv $HOME/.bashrc $_CONFIG_FILES_PATH
+	ln -s $_CONFIG_FILES_PATH/.bashrc $HOME
+fi
+
+if [ ! -f "$_CONFIG_FILES_PATH/.bash_aliases" ]
+then
+	touch $HOME/.bash_aliases
+	mv $HOME/.bash_aliases $_CONFIG_FILES_PATH
+	ln -s $_CONFIG_FILES_PATH/.bash_aliases $HOME
+fi
+
+if [ ! -f "$_CONFIG_FILES_PATH/.emacs" ]
+then
+	touch $HOME/.emacs
+	mv $HOME/.emacs $_CONFIG_FILES_PATH
+	ln -s $_CONFIG_FILES_PATH/.emacs $HOME
+fi
+
+if [ ! -f "$_CONFIG_FILES_PATH/.gitconfig" ]
+then
+	touch $HOME/.gitconfig
+	mv $HOME/.gitconfig $_CONFIG_FILES_PATH
+	ln -s $_CONFIG_FILES_PATH/.gitconfig $HOME
+fi
