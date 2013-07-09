@@ -32,3 +32,10 @@ then
 	mv $HOME/.gitconfig $_CONFIG_FILES_PATH
 	ln -s $_CONFIG_FILES_PATH/.gitconfig $HOME
 fi
+
+if [ ! -f "$_CONFIG_FILES_PATH/.ssh-config" ]
+then
+	touch $HOME/.ssh/config
+	mv $HOME/.ssh/config $_CONFIG_FILES_PATH/.ssh-config
+	ln -s $_CONFIG_FILES_PATH/.ssh-config $HOME/.ssh/config
+fi
