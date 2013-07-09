@@ -20,3 +20,22 @@ else
 	echo "ADT Bundle package already installed."
 fi
 
+if [ ! -f "$HOME/bin/javac" ]
+then
+	echo "Installing JAVA SDK Bundle package..."
+	SOURCE=http://download.oracle.com/otn-pub/java/jdk/7u21-b11/jdk-7u21-linux-x64.tar.gz
+	INSTALLER=`basename $SOURCE`
+	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
+	then
+		cd $_DOWNLOAD_PATH
+		wget $SOURCE
+	fi
+	mkdir -p $HOME/bin
+	cd $_DOWNLOAD_PATH
+	tar xzf $INSTALLER
+	rm -f $HOME/bin/javac $HOME/bin/jar
+	ln -s $_DOWNLOAD_PATH/jdk1.7.0_21/bin/javac $HOME/bin/javac
+	ln -s $_DOWNLOAD_PATH/jdk1.7.0_21/bin/jar $HOME/bin/jar
+else
+	echo "JDK package already installed."
+fi
