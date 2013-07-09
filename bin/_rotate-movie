@@ -1,0 +1,41 @@
+#!/bin/bash
+
+if [ $# != 3 ]
+then
+	echo "Usage: $0 [input-movie] [output-movie] [90 | -90]"
+	exit 2
+fi
+
+ROTATION=""
+
+if [ $3 == "90" ]
+then
+	ROTATION="transpose=1"
+fi
+
+if [ $3 == "-90" ]
+then
+	ROTATION="transpose=2"
+fi
+
+if [ -z $ROTATION ]
+then
+	echo "Usage: $0 [input-movie] [output-movie] [90 | -90]"
+	exit 3
+fi
+
+INPUT=$1
+OUTPUT=$2
+
+RESOLUTION=720x480
+#RESOLUTION=1920x1080
+BITRATE=4000k
+#BITRATE=20000k
+
+avconv -i "$INPUT" -threads 8 -s $RESOLUTION -vcodec mpeg4 -acodec libvo_aacenc -b $BITRATE -pass 1 -r 30 -y -vf "$ROTATION" "$OUTPUT"
+
+avconv -i "$INPUT" -threads 8 -s $RESOLUTION -vcodec mpeg4 -acodec libvo_aacenc -b $BITRATE -pass 2 -r 30 -y -vf "$ROTATION" "$OUTPUT"
+
+rm av2pass-0.log
+
+exit 0
