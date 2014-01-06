@@ -3,8 +3,8 @@
 if [ ! -f "$HOME/bin/adt-eclipse" ] || [ ! -f "$HOME/bin/android" ]
 then
 	echo "Installing ADT Bundle package..."
-	SOURCE=http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20130522.zip
-	INSTALLER=adt-bundle-linux-x86_64-20130522.zip
+	SOURCE=http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20131030.zip
+	INSTALLER=adt-bundle-linux-x86_64-20131030.zip
 	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
 	then
 		cd $_DOWNLOAD_PATH
@@ -14,28 +14,29 @@ then
 	cd $_DOWNLOAD_PATH
 	unzip $INSTALLER
 	rm -f $HOME/bin/adt-eclipse $HOME/bin/android
-	ln -s $_DOWNLOAD_PATH/adt-bundle-linux-x86_64-20130522/eclipse/eclipse $HOME/bin/adt-eclipse
-	ln -s $_DOWNLOAD_PATH/adt-bundle-linux-x86_64-20130522/sdk/tools/android $HOME/bin/android
+	ln -s $_DOWNLOAD_PATH/adt-bundle-linux-x86_64-20131030/eclipse/eclipse $HOME/bin/adt-eclipse
+	ln -s $_DOWNLOAD_PATH/adt-bundle-linux-x86_64-20131030/sdk/tools/android $HOME/bin/android
 else
 	echo "ADT Bundle package already installed."
 fi
 
-if [ ! -f "$HOME/bin/javac" ]
-then
-	echo "Installing JAVA SDK Bundle package..."
-	SOURCE=http://download.oracle.com/otn-pub/java/jdk/7u21-b11/jdk-7u21-linux-x64.tar.gz
-	INSTALLER=`basename $SOURCE`
-	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
-	then
-		cd $_DOWNLOAD_PATH
-		wget $SOURCE
-	fi
-	mkdir -p $HOME/bin
-	cd $_DOWNLOAD_PATH
-	tar xzf $INSTALLER
-	rm -f $HOME/bin/javac $HOME/bin/jar
-	ln -s $_DOWNLOAD_PATH/jdk1.7.0_21/bin/javac $HOME/bin/javac
-	ln -s $_DOWNLOAD_PATH/jdk1.7.0_21/bin/jar $HOME/bin/jar
-else
-	echo "JDK package already installed."
-fi
+#if [ ! -f "$HOME/bin/javac" ]
+#then
+#	echo "Installing JAVA SDK Bundle package..."
+#	SOURCE=http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz
+#	INSTALLER=`basename $SOURCE`
+#	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
+#	then
+#		cd $_DOWNLOAD_PATH
+#		wget $SOURCE
+#	fi
+#	mkdir -p $HOME/bin
+#	cd $_DOWNLOAD_PATH
+#	tar xzf $INSTALLER
+#	rm -f $HOME/bin/javac $HOME/bin/jar
+#	ln -s $_DOWNLOAD_PATH/jdk1.7.0_45/bin/javac $HOME/bin/javac
+#	ln -s $_DOWNLOAD_PATH/jdk1.7.0_45/bin/jar $HOME/bin/jar
+#else
+#	echo "JDK package already installed."
+#fi
+

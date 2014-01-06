@@ -1,0 +1,20 @@
+#/bin/bash
+
+if [ ! -f "$HOME/bin/soulseek" ]
+then
+	echo "Installing Soulseek..."
+	SOURCE=http://www.soulseekqt.net/SoulseekQT/Linux/SoulseekQt-2013-11-6-64bit.tgz
+	INSTALLER=SoulseekQt-2013-11-6-64bit.tgz
+	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
+	then
+		cd $_DOWNLOAD_PATH
+		wget $SOURCE
+	fi
+	mkdir -p $HOME/bin
+	cd $_DOWNLOAD_PATH
+	tar xzf $INSTALLER
+	rm -f $HOME/bin/soulseek
+	ln -s $_DOWNLOAD_PATH/SoulseekQt-2013-11-6-64bit $HOME/bin/soulseek
+else
+	echo "Soulseek already installed."
+fi

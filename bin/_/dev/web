@@ -1,9 +1,9 @@
 #/bin/bash
 
-if [ ! -d "$HOME/netbeans-7.3" ]
+if [ ! -d "$HOME/netbeans-7.4" ]
 then
-	echo "Installing Netbeans 7.3..."
-	SOURCE=http://dlc.sun.com.edgesuite.net/netbeans/7.3/final/bundles/netbeans-7.3-php-linux.sh
+	echo "Installing Netbeans 7.4..."
+	SOURCE=http://dlc.sun.com.edgesuite.net/netbeans/7.4/final/bundles/netbeans-7.4-php-linux.sh
 	INSTALLER=`basename $SOURCE`
 	if [ ! -f "$_DOWNLOAD_PATH/$INSTALLER" ]
 	then
@@ -12,7 +12,7 @@ then
 	fi
 	sh $_DOWNLOAD_PATH/$INSTALLER
 else
-	echo "Netbeans 7.3 package already installed."
+	echo "Netbeans 7.4 package already installed."
 fi
 
 if [ ! -f "/usr/bin/google-chrome" ]
